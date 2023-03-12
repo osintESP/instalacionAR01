@@ -1,13 +1,14 @@
 #!/bin/bash
 
 
-# Instalación de Python
+# Instalación de Pre-Requisitos Python, dpkg.. etc
 sudo pacman -S python
 python -m ensurepip --upgrade
+sudo pacman -S dpkg 
 
 # Actualización e instalación de herramientas básicas de OSINT
 sudo pacman -Syu
-sudo pacman -S nmap wireshark-qt theharvester maltego shodan metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit -y
+sudo pacman -S nmap wireshark-qt metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit -y
 
 # Instalación de theharester
 git clone https://github.com/laramies/theHarvester.git
@@ -15,8 +16,38 @@ cd theHarvester
 python3 -m pip install -r requirements.txt
 sudo python3 ./theHarvester.py
 
+# Maltego
+
+# Descargando el paquete binario de Maltego
+wget https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.v4.3.1.deb   
+
+# Extrayendo el paquete binario
+mkdir -p /tmp/maltego
+dpkg -x Maltego.v4.3.1.deb /tmp/maltego
+
+# Editando el archivo de configuración
+sed -i 's/name="full_name".*/name="full_name" value="Mi Nombre"/' /tmp/maltego/opt/MaltegoCE/etc/Maltego.conf
+
+# Copiando el directorio Maltego a la ubicación deseada
+sudo cp -r /tmp/maltego/opt/MaltegoCE /opt/
+sudo chown -R root:root /opt/MaltegoCE
+
+# Añadiendo el enlace simbólico para poder ejecutar Maltego desde la línea de comandos
+sudo ln -s /opt/MaltegoCE/bin/maltego /usr/bin/maltego
+
+# Limpiando todo
+rm MaltegoCE.v4.2.13.13462.deb
+rm -rf /tmp/maltego
+
+# Shodan
+
+sudo pacman -S base-devel
+git clone https://aur.archlinux.org/python-shodan.git
+cd python-shodan
+makepkg -sic
+
 # Instalación de Cobalt Strike
-cd ~/Downloads/
+cd ~/Descargas/
 wget https://cobaltstrike.com/download?invitation=
 chmod +x cs
 sudo mv cs /usr/bin/
