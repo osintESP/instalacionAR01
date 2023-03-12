@@ -1,11 +1,12 @@
 #!/bin/bash
 
+# Instalación de theHarvester / Shodan / Maltego
 # Clonamos el repositorio de TheHarvester
 git clone https://github.com/laramies/theHarvester.git
 cd theHarvester
 
 # Instalamos las dependencias de Python de TheHarvester
-sudo pacman -S python python-pip python-setuptools
+sudo pacman -S python python-pip python-setuptools -y
 sudo pip install -r requirements/base.txt
 
 # Instalamos TheHarvester
@@ -24,8 +25,9 @@ if [ $? -ne 0 ]; then
   echo "Error: Shodan no se pudo instalar correctamente. Por favor revise /tmp/shodan.log para más detalles."
 fi
 
-# Instalamos Maltego
-sudo pacman -Syy
-wget https://www.paterva.com/malv42/community/MaltegoCE.v4.2.13.13462.deb
-sudo pacman -S gdebi
-sudo gdebi -n MaltegoCE.v4.2.13.13462.deb
+# Instalamos Maltego y sus dependencias...
+
+sudo pacman -S jre-openjdk #Java
+wget https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.v4.3.1.deb
+sudo pacman -S dpkg
+sudo dpkg -i Maltego.v4.3.1.deb
