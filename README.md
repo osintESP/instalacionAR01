@@ -1,3 +1,12 @@
 # Instalación de herramientas básicas de OSINT
-# Instalación de Pivoting y Mimikatz
-# Instalación de Shellter
+
+## Sobre la distro Manjaro
+
+cd Descargas 
+git clone https://github.com/osintESP/instalacionAR01.git
+cd instalacionAR01
+
+chmod +x manja         
+./manja 
+
+
