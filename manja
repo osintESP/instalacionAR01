@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Instalación de Pre-Requisitos Python, dpkg.. etc
 sudo pacman -S python
 python -m ensurepip --upgrade
@@ -9,42 +8,6 @@ sudo pacman -S dpkg
 # Actualización e instalación de herramientas básicas de OSINT
 sudo pacman -Syu
 sudo pacman -S nmap wireshark-qt metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit -y
-
-# Instalación de theharester
-git clone https://github.com/laramies/theHarvester.git
-cd theHarvester
-python3 -m pip install -r requirements.txt
-sudo python3 ./theHarvester.py
-
-# Maltego
-
-# Descargando el paquete binario de Maltego
-wget https://maltego-downloads.s3.us-east-2.amazonaws.com/linux/Maltego.v4.3.1.deb   
-
-# Extrayendo el paquete binario
-mkdir -p /tmp/maltego
-dpkg -x Maltego.v4.3.1.deb /tmp/maltego
-
-# Editando el archivo de configuración
-sed -i 's/name="full_name".*/name="full_name" value="Mi Nombre"/' /tmp/maltego/opt/MaltegoCE/etc/Maltego.conf
-
-# Copiando el directorio Maltego a la ubicación deseada
-sudo cp -r /tmp/maltego/opt/MaltegoCE /opt/
-sudo chown -R root:root /opt/MaltegoCE
-
-# Añadiendo el enlace simbólico para poder ejecutar Maltego desde la línea de comandos
-sudo ln -s /opt/MaltegoCE/bin/maltego /usr/bin/maltego
-
-# Limpiando todo
-rm MaltegoCE.v4.2.13.13462.deb
-rm -rf /tmp/maltego
-
-# Shodan
-
-sudo pacman -S base-devel
-git clone https://aur.archlinux.org/python-shodan.git
-cd python-shodan
-makepkg -sic
 
 # Instalación de Cobalt Strike
 cd ~/Descargas/
@@ -82,8 +45,33 @@ cd mimikatz
 make
 cd ..
 
+# Clonamos el repositorio de TheHarvester
+git clone https://github.com/laramies/theHarvester.git
+cd theHarvester
+
+# Instalamos las dependencias de Python de TheHarvester
+sudo pacman -S python python-pip python-setuptools
+sudo pip install -r requirements/base.txt
+
+# Instalamos TheHarvester
+sudo python setup.py install > /tmp/theHarvester.log 2>&1
+if [ $? -ne 0 ]; then
+  echo "Error: TheHarvester no se pudo instalar correctamente. Por favor revise /tmp/theHarvester.log para más detalles."
+fi
+
+# Clonamos el repositorio de Shodan
+git clone https://github.com/achillean/shodan-python.git
+cd shodan-python
+
+# Instalamos Shodan
+sudo python setup.py install > /tmp/shodan.log 2>&1
+if [ $? -ne 0 ]; then
+  echo "Error: Shodan no se pudo instalar correctamente. Por favor revise /tmp/shodan.log para más detalles."
+fi
+
+
 # Instalación de Shellter
-cd ~/Downloads/
+cd ~/Descargas/
 wget -q 'https://www.shellterproject.com/Downloads/Shellter/Latest/shellter.zip'
 unzip shellter.zip
 rm shellter.zip
