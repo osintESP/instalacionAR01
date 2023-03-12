@@ -1,8 +1,19 @@
 #!/bin/bash
 
+
+# Instalación de Python
+sudo pacman -S python
+python -m ensurepip --upgrade
+
 # Actualización e instalación de herramientas básicas de OSINT
 sudo pacman -Syu
 sudo pacman -S nmap wireshark-qt theharvester maltego shodan metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit -y
+
+# Instalación de theharester
+git clone https://github.com/laramies/theHarvester.git
+cd theHarvester
+python3 -m pip install -r requirements.txt
+sudo python3 ./theHarvester.py
 
 # Instalación de Cobalt Strike
 cd ~/Downloads/
