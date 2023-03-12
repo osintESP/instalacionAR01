@@ -45,6 +45,7 @@ network-console network-console/start select continue
 
 ## WINDOWS 10/11 o Posteriores
 
+
 ```
 echo locales locales/default_environment_locale select es_MX.UTF-8 >> manjaro-preseed.cfg && ^
 echo keyboard-configuration keyboard-configuration/layout select Latin American >> manjaro-preseed.cfg && ^
