@@ -5,6 +5,12 @@
 ## Opción 1 
 ##Desatendida
 
+Crea un archivo de respuesta (también llamado archivo preseed) en un editor de texto que incluya información sobre las configuraciones de la instalación, como el idioma, la zona horaria, el hostname, el usuario y la contraseña, y guárdalo como "manjaro-preseed.cfg" en una carpeta en tu computadora. Este archivo especificará los ajustes que se utilizarán durante la instalación y evitará que tenga que responder manualmente durante el proceso de instalación.
+
+##Si tienes como Sistema Operativo a Linux
+
+vim osintesp-preseed.cfg
+
 ### Configuración de idioma y zonas horarias
 locales locales-gen
 keyboard-layouts keyboard-layouts/laoutcode string es
@@ -30,6 +36,42 @@ partman-auto/choose_recipe select All files in one partition (recommended for ne
 network-console network-console/enable boolean true
 network-console network-console/password password remote installation password
 network-console network-console/start select continue
+
+
+##Si tienes como Sistema Operativo a Windows
+
+echo locales locales/default_environment_locale select es_MX.UTF-8 >> manjaro-preseed.cfg && ^
+echo keyboard-configuration keyboard-configuration/layout select Latin American >> manjaro-preseed.cfg && ^
+echo keyboard-configuration keyboard-configuration/variantcode select >> manjaro-preseed.cfg && ^
+echo keyboard-configuration keyboard-configuration/modelcode select pc105 >> manjaro-preseed.cfg && ^
+echo keyboard-configuration keyboard-configuration/xkb-keymap select latam >> manjaro-preseed.cfg && ^
+echo user-setup-udeb user-setup/allow-password-weak boolean true >> manjaro-preseed.cfg && ^
+echo user-setup-udeb username string manjaro >> manjaro-preseed.cfg && ^
+echo user-setup-udeb full-name string Manjaro User >> manjaro-preseed.cfg && ^
+echo user-setup-udeb password password password >> manjaro-preseed.cfg && ^
+echo user-setup-udeb password-again password password >> manjaro-preseed.cfg && ^
+echo user-setup-udeb encrypt-home boolean false >> manjaro-preseed.cfg && ^
+echo partman-auto-crypto partman-auto-crypto/erase_disks boolean true >> manjaro-preseed.cfg && ^
+echo partman-auto-crypto partman-auto-crypto/key_size string 256 >> manjaro-preseed.cfg && ^
+echo partman-auto-crypto partman-auto-crypto/algorithm select aes-cbc-essiv:sha256 >> manjaro-preseed.cfg && ^
+echo partman-auto-crypto partman-auto-crypto/passphrase password password >> manjaro-preseed.cfg && ^
+echo partman-auto-crypto partman-auto-crypto/passphrase-again password password >> manjaro-preseed.cfg && ^
+echo partman-auto-lvm partman-auto-lvm/new_vg_name string vg00 >> manjaro-preseed.cfg && ^
+echo partman-auto-lvm partman-auto-lvm/no_boot boolean true >> manjaro-preseed.cfg && ^
+echo partman-auto-lvm partman-auto-lvm/confirm boolean true >> manjaro-preseed.cfg && ^
+echo partman-auto-lvm partman-auto-lvm/encryption_passphrase password password >> manjaro-preseed.cfg && ^
+echo partman-auto-lvm partman-auto-lvm/encryption_passphrase-again password password >> manjaro-preseed.cfg && ^
+echo partman-auto-lvm partman-auto-lvm/new_lv_name string lv_root >> manjaro-preseed.cfg && ^
+echo partman-auto-lvm partman-auto-lvm/guided_size string max >> manjaro-preseed.cfg && ^
+echo partman-auto-lvm partman-auto-lvm/new_lv_size string 100%VG >> manjaro-preseed.cfg && ^
+echo partman-basicfilesystems partman-basicfilesystems/choose_label string gpt >> manjaro-preseed.cfg && ^
+echo partman-partitioning partman-partitioning/confirm_write_new_label boolean true >> manjaro-preseed.cfg && ^
+echo partman-partitioning partman-partitioning/confirm boolean true >> manjaro-preseed.cfg && ^
+echo partman-basicfilesystems partman-basicfilesystems/default_filesystem string ext4 >> manjaro-preseed.cfg && ^
+echo ubiquity ubiquity/summary note >> manjaro-preseed.cfg
+
+
+
 
 Es importante que en la sección de informacion de usuario y contraseñas incluyas la contraseña en formato hash (optativo pero importante).
 
