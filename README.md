@@ -4,6 +4,7 @@
 ## Brindamos alternativas para que lleves a cabo la instalación
 
 ## Opción 1 
+
 ##Desatendida
 
 Crea un archivo de respuesta en un editor de texto que incluya información sobre las configuraciones de la instalación, como el idioma, la zona horaria, el hostname, el usuario y la contraseña, y guardarlo como "manjaro-preseed.cfg" en una carpeta en tu computadora. Este archivo especificará los ajustes que se utilizarán durante la instalación y evitará que tenga que responder manualmente durante el proceso de instalación.
@@ -97,7 +98,8 @@ VBoxManage storageattach "Manjaro" --storagectl "SATA Controller" --port 0 --dev
 ```
 
 ## Opción 2 
-##A manopla :S
+
+## Manual
 
 a )Descarga e instala VirtualBox en tu sistema operativo en https://www.virtualbox.org/wiki/Downloads.
 
