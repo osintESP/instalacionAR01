@@ -6,13 +6,15 @@
 ## Opción 1 
 ##Desatendida
 
-Crea un archivo de respuesta (también llamado archivo preseed) en un editor de texto que incluya información sobre las configuraciones de la instalación, como el idioma, la zona horaria, el hostname, el usuario y la contraseña, y guárdalo como "manjaro-preseed.cfg" en una carpeta en tu computadora. Este archivo especificará los ajustes que se utilizarán durante la instalación y evitará que tenga que responder manualmente durante el proceso de instalación.
+Crea un archivo de respuesta en un editor de texto que incluya información sobre las configuraciones de la instalación, como el idioma, la zona horaria, el hostname, el usuario y la contraseña, y guardarlo como "manjaro-preseed.cfg" en una carpeta en tu computadora. Este archivo especificará los ajustes que se utilizarán durante la instalación y evitará que tenga que responder manualmente durante el proceso de instalación.
 
-##Si tienes como Sistema Operativo a Linux
+## LINUX 
 
 ```
 vim osintesp-preseed.cfg
 ```
+Copiar y Pegar lo siguiente:
+
 ```
 ### Configuración de idioma y zonas horarias
 locales locales-gen
@@ -41,7 +43,7 @@ network-console network-console/password password remote installation password
 network-console network-console/start select continue
 ```
 
-##Si tienes como Sistema Operativo a Windows
+## WINDOWS 10/11 o Posteriores
 
 ```
 echo locales locales/default_environment_locale select es_MX.UTF-8 >> manjaro-preseed.cfg && ^
