@@ -1,6 +1,7 @@
 # Tienes en este momento a la vista a una de las pocas distribuciones en Español de OSINT 
-# En Abril y Octubre estaremos realizando actualización de las versiones :)
-# Brindamos alternativas para que lleves a cabo la instalación
+## Cada 6 meses estaremos realizando actualización de las versiones :)
+
+## Brindamos alternativas para que lleves a cabo la instalación
 
 ## Opción 1 
 ##Desatendida
