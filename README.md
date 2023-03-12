@@ -9,8 +9,10 @@ Crea un archivo de respuesta (también llamado archivo preseed) en un editor de 
 
 ##Si tienes como Sistema Operativo a Linux
 
+```
 vim osintesp-preseed.cfg
-
+```
+```
 ### Configuración de idioma y zonas horarias
 locales locales-gen
 keyboard-layouts keyboard-layouts/laoutcode string es
@@ -36,10 +38,11 @@ partman-auto/choose_recipe select All files in one partition (recommended for ne
 network-console network-console/enable boolean true
 network-console network-console/password password remote installation password
 network-console network-console/start select continue
-
+```
 
 ##Si tienes como Sistema Operativo a Windows
 
+```
 echo locales locales/default_environment_locale select es_MX.UTF-8 >> manjaro-preseed.cfg && ^
 echo keyboard-configuration keyboard-configuration/layout select Latin American >> manjaro-preseed.cfg && ^
 echo keyboard-configuration keyboard-configuration/variantcode select >> manjaro-preseed.cfg && ^
@@ -69,9 +72,7 @@ echo partman-partitioning partman-partitioning/confirm_write_new_label boolean t
 echo partman-partitioning partman-partitioning/confirm boolean true >> manjaro-preseed.cfg && ^
 echo partman-basicfilesystems partman-basicfilesystems/default_filesystem string ext4 >> manjaro-preseed.cfg && ^
 echo ubiquity ubiquity/summary note >> manjaro-preseed.cfg
-
-
-
+```
 
 Es importante que en la sección de informacion de usuario y contraseñas incluyas la contraseña en formato hash (optativo pero importante).
 
@@ -79,13 +80,17 @@ Abre una ventana de terminal / línea de comandos y navega a la ubicación de Vi
 
 Ejecuta el siguiente comando para crear una nueva máquina virtual en VirtualBox:
 
+```
 VBoxManage createvm --name "Manjaro" --ostype ArchLinux_64 --register
+```
 
 Luego, agrega un disco duro virtual a la máquina virtual con el siguiente comando:
 
+```
 VBoxManage storagectl "Manjaro" --name "SATA Controller" --add sata --controller IntelAHCI
 VBoxManage createhd --filename Manjaro.vdi --size 8192 --format VDI
 VBoxManage storageattach "Manjaro" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium Manjaro.vdi
+```
 
 ## Opción 2 
 ##A manopla :S
@@ -125,13 +130,17 @@ Instalación de herramientas básicas de OSINT
 
 ## Sobre la distro Manjaro
 
-cd Descargas 
-
+``` cd Descargas 
+```
+```
 git clone https://github.com/osintESP/instalacionAR01.git
-
+```
+```
 cd instalacionAR01
+```
+```
+chmod +x *
 
-chmod +x manja         
 ./manja 
 
 
