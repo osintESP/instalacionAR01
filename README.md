@@ -5,6 +5,46 @@
 ## Opción 1 
 ##Desatendida
 
+### Configuración de idioma y zonas horarias
+locales locales-gen
+keyboard-layouts keyboard-layouts/laoutcode string es
+keyboard-layouts keyboard-layouts/variantcode string 
+keyboard-configuration keyboard-configuration/unsupported_layout boolean true
+keyboard-configuration keyboard-configuration/layout select Spanish (SP)
+keyboard-configuration keyboard-configuration/layoutcode string es
+keyboard-configuration keyboard-configuration/variantcode string 
+
+### Información de usuario y contraseñas
+user-setup-udeb username string manjaro
+user-setup-udeb full-name string Manjaro User
+user-setup-udeb password-crypted password hash
+user-setup-udeb password-again-crypted password hash
+user-setup-udeb encrypt-home boolean false
+ 
+### Configuración de partición
+partman-auto/init_automatically_partition select Guided - use entire disk
+partman-auto/method string regular
+partman-auto/choose_recipe select All files in one partition (recommended for new users)
+
+### Configuración de red
+network-console network-console/enable boolean true
+network-console network-console/password password remote installation password
+network-console network-console/start select continue
+
+Es importante que en la sección de informacion de usuario y contraseñas incluyas la contraseña en formato hash (optativo pero importante).
+
+Abre una ventana de terminal / línea de comandos y navega a la ubicación de VirtualBox en tu computadora.
+
+Ejecuta el siguiente comando para crear una nueva máquina virtual en VirtualBox:
+
+VBoxManage createvm --name "Manjaro" --ostype ArchLinux_64 --register
+
+Luego, agrega un disco duro virtual a la máquina virtual con el siguiente comando:
+
+VBoxManage storagectl "Manjaro" --name "SATA Controller" --add sata --controller IntelAHCI
+VBoxManage createhd --filename Manjaro.vdi --size 8192 --format VDI
+VBoxManage storageattach "Manjaro" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium Manjaro.vdi
+
 ## Opción 2 
 ##A manopla :S
 
