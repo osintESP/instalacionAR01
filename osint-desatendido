@@ -69,12 +69,20 @@ if [ $? -ne 0 ]; then
   echo "Error: Shodan no se pudo instalar correctamente. Por favor revise /tmp/shodan.log para más detalles."
 fi
 
-
 # Instalación de Shellter
 cd ~/Descargas/
 wget -q 'https://www.shellterproject.com/Downloads/Shellter/Latest/shellter.zip'
 unzip shellter.zip
 rm shellter.zip
 
-# Fin del script
+
+# Instalador de Herramientas BlackArch.
+
+$ curl -O https://blackarch.org/strap.sh
+$ echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
+$ chmod +x strap.sh
+$ sudo ./strap.sh
+$ sudo pacman -Syu
+
+
 echo "Todas las herramientas han sido instaladas correctamente"
