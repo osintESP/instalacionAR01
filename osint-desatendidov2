@@ -1,0 +1,88 @@
+#!/bin/bash -ex
+
+# Instalación de Pre-Requisitos Python, dpkg.. etc
+yes | sudo pacman -S python
+python -m ensurepip --upgrade
+yes | sudo pacman -S dpkg 
+
+# Actualización e instalación de herramientas básicas de OSINT
+yes | sudo pacman -Syu
+yes | sudo pacman -S nmap wireshark-qt metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit -y
+
+# Instalación de Cobalt Strike
+cd ~/Descargas/
+wget https://cobaltstrike.com/download?invitation=
+chmod +x cs
+sudo mv cs /usr/bin/
+
+# Instalación de Metasploit Framework
+cd ~/Downloads/
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+sudo chmod 755 msfinstall
+sudo ./msfinstall
+
+# Instalación de Empire Project
+cd ~/Downloads/
+git clone https://github.com/BC-SECURITY/Empire.git
+cd Empire
+sudo ./setup/install.sh
+
+# Instalación de PowerSploit
+cd ~/Downloads/
+git clone https://github.com/PowerShellMafia/PowerSploit.git
+sudo mv PowerSploit /opt
+
+# Instalación de BeEF
+cd ~/Downloads/
+git clone https://github.com/beefproject/beef.git
+cd beef
+sudo ./install
+
+# Instalación de Mimikatz
+cd ~/Downloads/
+git clone https://github.com/gentilkiwi/mimikatz.git
+cd mimikatz
+make
+cd ..
+
+# Clonamos el repositorio de TheHarvester
+git clone https://github.com/laramies/theHarvester.git
+cd theHarvester
+
+# Instalamos las dependencias de Python de TheHarvester
+yes | sudo pacman -S python python-pip python-setuptools
+sudo pip install -r requirements/base.txt
+
+# Instalamos TheHarvester
+sudo python setup.py install > /tmp/theHarvester.log 2>&1
+if [ $? -ne 0 ]; then
+  echo "Error: TheHarvester no se pudo instalar correctamente. Por favor revise /tmp/theHarvester.log para más detalles."
+fi
+
+# Clonamos el repositorio de Shodan
+git clone https://github.com/achillean/shodan-python.git
+cd shodan-python
+
+# Instalamos Shodan
+sudo python setup.py install > /tmp/shodan.log 2>&1
+if [ $? -ne 0 ]; then
+  echo "Error: Shodan no se pudo instalar correctamente. Por favor revise /tmp/shodan.log para más detalles."
+fi
+
+# Instalación de Shellter
+cd ~/Descargas/
+wget -q 'https://www.shellterproject.com/Downloads/Shellter/Latest/shellter.zip'
+unzip shellter.zip
+rm shellter.zip
+
+
+# Instalador de Herramientas BlackArch.
+
+curl -O https://blackarch.org/strap.sh
+echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
+chmod +x strap.sh
+sudo ./strap.sh
+yes | sudo pacman -Syu
+
+
+echo "Todas las herramientas han sido instaladas correctamente"
