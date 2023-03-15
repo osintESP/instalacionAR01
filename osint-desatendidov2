@@ -1,13 +1,13 @@
 #!/bin/bash -ex
 
 # Instalación de Pre-Requisitos Python, dpkg.. etc
-s | sudo pacman -S python
+sudo pacman -S python -y
 python -m ensurepip --upgrade
-s | sudo pacman -S dpkg 
+sudo pacman -S dpkg -y
 
 # Actualización e instalación de herramientas básicas de OSINT
-s | sudo pacman -Syu
-s | sudo pacman -S nmap wireshark-qt metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit -y
+sudo pacman -Syu
+sudo pacman -S nmap wireshark-qt metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit -y
 
 # Instalación de Cobalt Strike
 cd ~/Descargas/
@@ -50,7 +50,7 @@ git clone https://github.com/laramies/theHarvester.git
 cd theHarvester
 
 # Instalamos las dependencias de Python de TheHarvester
-S | sudo pacman -S python python-pip python-setuptools
+sudo pacman -S python python-pip python-setuptools -y
 sudo pip install -r requirements/base.txt
 
 # Instalamos TheHarvester
@@ -82,7 +82,7 @@ curl -O https://blackarch.org/strap.sh
 echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
 chmod +x strap.sh
 sudo ./strap.sh
-S | sudo pacman -Syu
+sudo pacman -Syu
 
 
 echo "Todas las herramientas han sido instaladas correctamente"
