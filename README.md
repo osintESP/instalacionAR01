@@ -3,6 +3,31 @@
 
 ## Brindamos alternativas para que lleves a cabo la instalación
 
+## Opción 0 
+
+##Vagrant
+
+La manera más fácil de tener tu distribución disponible en tu equipo!
+Pre-Requisitos:
+1) Instalar Vagrant https://developer.hashicorp.com/vagrant/downloads
+
+Crear los siguientes archivos:
+
+vagrant-install.sh
+```
+#!/bin/bash
+
+# instalar el entorno gráfico GNOME
+sudo pacman -S --noconfirm gnome
+
+# clonar el repositorio de GITHUB e instalar las aplicaciones de OSINT
+sudo pacman -S --noconfirm git
+git clone https://github.com/osintESP/instalacionAR01.git
+cd instalacionAR01
+sudo bash install.sh
+
+```
+
 ## Opción 1 
 
 ##Desatendida
