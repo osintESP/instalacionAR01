@@ -6,3 +6,8 @@ sudo pacman -Syu
 ´´´
 sudo pacman -S vagrant
 ´´´
+
+vagrant version                                                                                                                                                                                                                                                                                       ✔  29s  
+Installed Version: 2.3.4
+Latest Version: 2.3.4
+
