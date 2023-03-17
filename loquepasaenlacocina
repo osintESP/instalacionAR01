@@ -1,17 +1,16 @@
 # Instalé última versión de Manjaro con  todas sus aplicaciones actualizadas.
-```
+
 sudo pacman -Syu
-```
+
 # Procedo a instalar vagrant
-```
+
 sudo pacman -S vagrant
-```
+
 Observemos la versión...
-```
+
 vagrant version                                                                                                                                                                                                                                                                                       ✔  29s  
 Installed Version: 2.3.4
 Latest Version: 2.3.4
 
-```
 # Estamos listos para proseguir
 
