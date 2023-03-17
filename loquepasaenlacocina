@@ -1,0 +1,8 @@
+# Instalé última versión de Manjaro con  todas sus aplicaciones actualizadas.
+´´´
+sudo pacman -Syu
+´´´
+# Procedo a instalar vagrant
+´´´
+sudo pacman -S vagrant
+´´´
