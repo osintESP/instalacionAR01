@@ -1,14 +1,4 @@
-# Instalé última versión de Manjaro XFCE DESKTOP con  todas sus aplicaciones actualizadas.
-
-1) Instalar una versión de Manjaro (XFCE DESKTOP Minimal). 
-2) Asegurar de que tengas instalado VirtualBox (o cualquier otro proveedor que desees utilizar).
-  a) Montar unidad en VirtualBox
-  b) sudo /run/media/osintespv1/VBox_GAs_7.0.6/VBoxLinuxAdditions.run
-  
-Después de instalar el sistema operativo, instala las herramientas de huésped de VirtualBox. Esto permitirá que la máquina virtual se integre mejor con el proveedor y dará una experiencia más fluida al usuario al usar la caja.
-
-
-sudo pacman -Syu
+0) Sobre anfitrión
 
 # Procedo a instalar vagrant
 
@@ -20,5 +10,22 @@ vagrant version                                                                 
 Installed Version: 2.3.4
 Latest Version: 2.3.4
 
-# Estamos listos para proseguir
+
+# Instaar última versión de Manjaro GNOME con  todas sus aplicaciones actualizadas.
+
+1) Instalar una versión de Manjaro (GNOME). 
+
+
+2) Asegurar de que tengas instalado VirtualBox (o cualquier otro proveedor que desees utilizar).
+
+  a) Montar unidad en VirtualBox
+  b) sudo /run/media/osintespv1/VBox_GAs_7.0.6/VBoxLinuxAdditions.run
+
+3) Detener la VM y exportar la caja a .box. Para hacerlo, ejecuta el siguiente comando desde la terminal
+
+vagrant package --base osintespv1 --output osintespv1.box
+
+sudo pacman -Syu
+
+
 
