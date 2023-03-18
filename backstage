@@ -1,21 +1,24 @@
-0) Sobre anfitrión
+FASE 1)
 
-# Procedo a instalar vagrant
+#Sobre anfitrión
+
+#1) Procedo a instalar vagrant
 
 sudo pacman -S vagrant
 
-Observemos la versión...
+#Observemos la versión...
 
 vagrant version                                                                                                                                                                                                                                                                                       ✔  29s  
 Installed Version: 2.3.4
 Latest Version: 2.3.4
 
+#2) Instalar VirtualBox
 
-# Instaar última versión de Manjaro GNOME con  todas sus aplicaciones actualizadas.
+
+FASE 2)
+# Instalar última versión de Manjaro GNOME con  todas sus aplicaciones actualizadas.
 
 1) Instalar una versión de Manjaro (GNOME). 
-
-
 2) Asegurar de que tengas instalado VirtualBox (o cualquier otro proveedor que desees utilizar).
 
   a) Montar unidad en VirtualBox
@@ -23,15 +26,18 @@ Latest Version: 2.3.4
 
 3) Detener la VM y exportar la caja a .box. Para hacerlo, ejecuta el siguiente comando desde la terminal
 
-vagrant package --base osintespv1 --output osintespv1.box
+vagrant package --base nombre_de_la_VM --output nombre_de_la_caja.box
 
 ==> osintespv1: Exporting VM...
 ==> osintespv1: Compressing package to: C:/Users/cruce/osintesp/v1/osintespv1.box
-vagrant package --base nombre_de_la_VM --output nombre_de_la_caja.box
+
+vagrant package --base osintespv1 --output osintespv1.box
+
+4) Agregar al repo  
 
 vagrant box add osintespv1 osintespv1.box
 
-# Por último suber el provider al Cloud de Vagrant
+# 5) Subi el provider al Cloud de Vagrant
 vagrant cloud publish osintesp/osintesp-v1 1.0 virtualbox osintespv1.box
 
 # Por último iniciar la VM desde Vagrant Cloud 
