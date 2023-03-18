@@ -34,3 +34,6 @@ vagrant box add osintespv1 osintespv1.box
 # Por último suber el provider al Cloud de Vagrant
 vagrant cloud publish osintesp/osintesp-v1 1.0 virtualbox osintespv1.box
 
+# Por último iniciar la VM desde Vagrant Cloud 
+vagrant init osintesp/osintesp-v1 --box-version 1.0
+vagrant up
