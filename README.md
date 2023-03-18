@@ -42,6 +42,16 @@ sudo bash install.sh
 ```
 
 
+vagrant cloud auth login --token IHLHO7R2K4gaVQ.atlasv1.Jn3pHr76oYEdio57Q9ZNZPTtM6PfyUPYKXFJE6lrw09P0uBBa9vyeab1vqemXDoBfAo
+
+
+# Posibles ERRORES
+
+URL: ["https://vagrantcloud.com/osintesp/osintesp-v1"]
+Error: schannel: next InitializeSecurityContext failed: Unknown error (0x80092012) - La funci¾n de revocaci¾n no puede comprobar la revocaci¾n para el certificado.
+
+Verifica si tienes Kaspersky deberás por un momento desactivar la verificación de https.
+
 ## Opción 1 
 
 ##Desatendida
