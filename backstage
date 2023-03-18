@@ -31,5 +31,6 @@ vagrant package --base nombre_de_la_VM --output nombre_de_la_caja.box
 
 vagrant box add osintespv1 osintespv1.box
 
-
+# Por último suber el provider al Cloud de Vagrant
+vagrant cloud publish osintesp/osintesp-v1 1.0 virtualbox osintespv1.box
 
