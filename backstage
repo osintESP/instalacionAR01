@@ -25,7 +25,11 @@ Latest Version: 2.3.4
 
 vagrant package --base osintespv1 --output osintespv1.box
 
-sudo pacman -Syu
+==> osintespv1: Exporting VM...
+==> osintespv1: Compressing package to: C:/Users/cruce/osintesp/v1/osintespv1.box
+vagrant package --base nombre_de_la_VM --output nombre_de_la_caja.box
+
+vagrant box add osintespv1 osintespv1.box
 
 
 
