@@ -27,11 +27,12 @@ FASE 2)
 3) Detener la VM y exportar la caja a .box. Para hacerlo, ejecuta el siguiente comando desde la terminal
 
 vagrant package --base nombre_de_la_VM --output nombre_de_la_caja.box
+Ej: vagrant package --base manjaro-min --output osintesp.box
 
 ==> osintespv1: Exporting VM...
-==> osintespv1: Compressing package to: C:/Users/cruce/osintesp/v1/osintespv1.box
+==> osintespv1: Compressing package to: C:osintesp.box
 
-vagrant package --base osintespv1 --output osintespv1.box
+vagrant package --base manjaro-min --output osintesp.box
 
 4) Agregar al repo  
 
