@@ -36,7 +36,29 @@ vagrant package --base manjaro-min --output osintesp.box
 
 Preparar SSH
 
-https://developer.hashicorp.com/vagrant/docs/boxes/base#quot-vagrant-quot-user
+Genera un par de claves SSH (pública y privada) en tu máquina local. Puedes hacer esto ejecutando el siguiente comando en tu terminal:
+
+ssh-keygen -t rsa
+
+Asegúrate de no proteger la clave con una contraseña para que se puedan automatizar las conexiones SSH sin la necesidad de ingresar una contraseña.
+
+Agrega la clave pública al archivo authorized_keys en la máquina virtual de Vagrant. Puedes hacer esto utilizando el siguiente comando en tu terminal:
+
+cat ~/.ssh/id_rsa.pub | ssh vagrant@127.0.0.1 -p 2222 'cat >> ~/.ssh/authorized_keys'
+
+Esto agrega la clave pública a la lista de claves permitidas para la conexión SSH.
+
+Ahora puedes configurar Vagrant para utilizar la clave privada automáticamente. Para hacer esto, agrega el siguiente código al archivo Vagrantfile:
+
+
+config.ssh.insert_key = false
+config.ssh.private_key_path = '~/.ssh/id_rsa'
+
+Esto le indica a Vagrant que no inserte la clave pública en la máquina virtual y que utilice la clave privada especificada automáticamente
+para realizar la conexión SSH.
+
+Con estos pasos, ya deberías poder conectarte a la máquina virtual sin tener que preocuparte por configurar manualmente las claves SSH. 
+Simplemente ejecuta el comando vagrant up y Vagrant utilizará la clave privada especificada automáticamente para conectarse a la máquina virtual.
 
 4) Agregar al repo  
 
