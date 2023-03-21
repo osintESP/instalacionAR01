@@ -51,8 +51,13 @@ Esto agrega la clave pública a la lista de claves permitidas para la conexión 
 Ahora puedes configurar Vagrant para utilizar la clave privada automáticamente. Para hacer esto, agrega el siguiente código al archivo Vagrantfile:
 
 
-config.ssh.insert_key = false
-config.ssh.private_key_path = '~/.ssh/id_rsa'
+Vagrant.configure("2") do |config|
+  config.vm.box = "osintesp/osintesp-v1"
+  config.vm.box_version = "1.0"
+  config.ssh.insert_key = false
+  config.ssh.private_key_path = '~/.ssh/id_rsa'
+end
+
 
 Esto le indica a Vagrant que no inserte la clave pública en la máquina virtual y que utilice la clave privada especificada automáticamente
 para realizar la conexión SSH.
