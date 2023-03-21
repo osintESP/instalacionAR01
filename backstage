@@ -52,7 +52,7 @@ Ahora puedes configurar Vagrant para utilizar la clave privada automáticamente.
 
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "osintesp/osintesp-v1"
+  config.vm.box = "osintesp/osintesp"
   config.vm.box_version = "1.0"
   config.ssh.insert_key = false
   config.ssh.private_key_path = '~/.ssh/id_rsa'
