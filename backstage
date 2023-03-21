@@ -34,6 +34,10 @@ Ej: vagrant package --base manjaro-min --output osintesp.box
 
 vagrant package --base manjaro-min --output osintesp.box
 
+Preparar SSH
+
+https://developer.hashicorp.com/vagrant/docs/boxes/base#quot-vagrant-quot-user
+
 4) Agregar al repo  
 
 vagrant box add osintespv1 osintespv1.box
