@@ -109,6 +109,13 @@ cd ../../..
 # Instalar WhatWeb
 sudo pacman -S whatweb
 
+# Instalar herramientas explotación
+sudo pacman -Syu hydra armitage set burp metagoofil netcat
+
+# Instalar Cain and Abel usando yay
+yay -S cain
+
+
 # Instalador de Herramientas BlackArch.
 
 $ curl -O https://blackarch.org/strap.sh
