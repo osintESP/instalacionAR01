@@ -6,6 +6,19 @@ sudo pacman -S python python-pip python-setuptools dpkg
 # Instalar Ruby Pre-Requisito de varias aplicaciones
 
 sudo pacman -S ruby
+# Instalador de Herramientas BlackArch.
+
+$ curl -O https://blackarch.org/strap.sh
+$ echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
+$ chmod +x strap.sh
+$ sudo ./strap.sh
+$ sudo pacman -Syu
+
+
+echo "Todas las herramientas han sido instaladas correctamente"
+# Instalar BlackArch
+cd ~
+
 
 # Actualizar e instalar herramientas de OSINT y explotación
 sudo pacman -Syu nmap wireshark-qt metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit hydra armitage set burp metagoofil netcat whatweb yay
@@ -100,16 +113,3 @@ sudo pacman -Syu hydra armitage set burp metagoofil netcat
 
 # Instalar Cain and Abel usando yay
 yay -S cain
-
-# Instalador de Herramientas BlackArch.
-
-$ curl -O https://blackarch.org/strap.sh
-$ echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
-$ chmod +x strap.sh
-$ sudo ./strap.sh
-$ sudo pacman -Syu
-
-
-echo "Todas las herramientas han sido instaladas correctamente"
-# Instalar BlackArch
-cd ~
