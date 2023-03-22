@@ -3,6 +3,10 @@
 # Instalar Pre-Requisitos Python y dpkg
 sudo pacman -S python python-pip python-setuptools dpkg
 
+# Instalar Ruby Pre-Requisito de varias aplicaciones
+
+sudo pacman -S ruby
+
 # Actualizar e instalar herramientas de OSINT y explotación
 sudo pacman -Syu nmap wireshark-qt metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit hydra armitage set burp metagoofil netcat whatweb yay
 yay -S cain
