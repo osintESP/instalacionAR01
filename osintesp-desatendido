@@ -19,7 +19,7 @@ echo "Todas las herramientas han sido instaladas correctamente"
 
 # Actualizar e instalar herramientas de OSINT y explotación
 sudo pacman -Syu --noconfirm nmap 
-sudo pacman -Syu --noconfirm wireshark-qt    set burp metagoofil  yay
+sudo pacman -Syu --noconfirm wireshark-qt
 sudo pacman -Syu --noconfirm metasploit
 sudo pacman -Syu --noconfirm aircrack-ng
 sudo pacman -Syu --noconfirm sqlmap
@@ -33,7 +33,7 @@ sudo pacman -Syu --noconfirm netcat
 sudo pacman -Syu --noconfirm whatweb
 
 yay -S --noconfirm cain
-n
+
 # Instalación de Cobalt Strike
 cd ~/Descargas/
 wget https://cobaltstrike.com/download?invitation=
