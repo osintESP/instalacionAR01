@@ -194,10 +194,10 @@ git clone https://github.com/osintESP/instalacionAR01.git
 cd instalacionAR01
 ```
 ```
-chmod +x *
+chmod +x osintesp-desatendido
 ```
 ```
-./desatendido-simplificado
+./osintesp-desatendido
 ```
 Usuario : vagrant
 Contraseña: vagrant
