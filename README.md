@@ -183,7 +183,7 @@ ll) Sigue los pasos del instalador de Manjaro para completar la instalación del
 
 Instalación de herramientas básicas de OSINT
 
-## Sobre la distro Manjaro
+## Deploy instalación desatendida
 
 ``` cd Descargas 
 ```
