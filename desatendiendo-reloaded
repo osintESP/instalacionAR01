@@ -13,13 +13,27 @@ echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
 chmod +x strap.sh
 sudo ./strap.sh
 sudo pacman -Syu --noconfirm
+sudo pacman -Syu yay --noconfirm
 
 echo "Todas las herramientas han sido instaladas correctamente"
 
 # Actualizar e instalar herramientas de OSINT y explotación
-sudo pacman -Syu --noconfirm nmap wireshark-qt metasploit aircrack-ng sqlmap nikto tor proxychains bleachbit hydra armitage set burp metagoofil netcat whatweb yay
-yay -S --noconfirm cain
+sudo pacman -Syu --noconfirm nmap 
+sudo pacman -Syu --noconfirm wireshark-qt    set burp metagoofil  yay
+sudo pacman -Syu --noconfirm metasploit
+sudo pacman -Syu --noconfirm aircrack-ng
+sudo pacman -Syu --noconfirm sqlmap
+sudo pacman -Syu --noconfirm nikto
+sudo pacman -Syu --noconfirm tor
+sudo pacman -Syu --noconfirm proxychains
+sudo pacman -Syu --noconfirm bleachbit
+sudo pacman -Syu --noconfirm hydra
+sudo pacman -Syu --noconfirm armitage
+sudo pacman -Syu --noconfirm netcat
+sudo pacman -Syu --noconfirm whatweb
 
+yay -S --noconfirm cain
+n
 # Instalación de Cobalt Strike
 cd ~/Descargas/
 wget https://cobaltstrike.com/download?invitation=
