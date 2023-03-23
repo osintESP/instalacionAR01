@@ -195,7 +195,8 @@ cd instalacionAR01
 ```
 ```
 chmod +x *
-
-./manja 
-
+```
+```
+./desatendido-simplificado
+```
 
