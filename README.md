@@ -199,4 +199,6 @@ chmod +x *
 ```
 ./desatendido-simplificado
 ```
+Usuario : vagrant
+Contraseña: vagrant
 
