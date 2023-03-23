@@ -1,6 +1,11 @@
 
 #!/bin/bash
 
+# Aplicar Papel Tapiz de OsintESP
+wget https://github.com/osintESP/instalacionAR01/raw/master/OIG.jpg
+sudo pacman -S feh
+feh --bg-fill OIG.jpg
+
 # Instalar Pre-Requisitos Python y dpkg
 sudo pacman -S --noconfirm python python-pip python-setuptools dpkg
 
