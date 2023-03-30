@@ -8,14 +8,22 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    # Install Xorg and XFCE4 desktop environment
-    sudo pacman -Syu --noconfirm xorg-server xorg-xinit xorg-xrandr xfce4 xfce4-goodies
+    # Install GNOME, Xorg and VirtualBox Guest Additions
+    sudo pacman -Syu --noconfirm xorg xorg-xclock xorg-xauth xorg-xbacklight xorg-xev xorg-xinput xorg-xkbcomp xorg-xkbevd xorg-xkbutils xorg-xmodmap xorg-xprop xorg-xrandr xorg-xrdb xorg-xrefresh xorg-xset xorg-xsetroot xorg-xvinfo xorg-xwayland xorg-server xorg-xinit virtualbox-guest-utils-nox gnome gnome-extra
 
-    # Check if XFCE4 is installed
-    if ! pacman -Qs xfce4 > /dev/null; then
-      echo "XFCE4 not installed. Aborting..."
+    # Check if GNOME is installed
+    if ! pacman -Qs gnome-shell > /dev/null; then
+      echo "GNOME not installed. Aborting..."
       exit 1
     fi
+
+    # Configure GDM to start on boot
+    sudo systemctl enable gdm.service
+
+    # Mount the Guest Additions ISO and run the installer
+    sudo mkdir /media/cdrom
+    sudo mount /dev/cdrom /media/cdrom
+    sudo sh /media/cdrom/VBoxLinuxAdditions.run
 
     # Restart VM
     sudo reboot
