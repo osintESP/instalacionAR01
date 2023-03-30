@@ -1,0 +1,22 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "archlinux/archlinux"
+  config.vm.hostname = "Osintesp"
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 4096
+    vb.cpus = 2
+    vb.gui = true
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    # Install xfce4 desktop environment
+    sudo pacman -Syu --noconfirm xfce4 xfce4-goodies
+    # Check if xfce4 is installed
+    if ! pacman -Qs xfce4 > /dev/null; then
+      echo "xfce4 not installed. Aborting..."
+      exit 1
+    fi
+    # Restart VM
+    sudo reboot
+    sleep 60
+  SHELL
+end
