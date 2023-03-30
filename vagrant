@@ -30,5 +30,9 @@ Vagrant.configure("2") do |config|
     # Reinicio VM para que inicie entorno gráfico :)
     sudo reboot
     sleep 60
+   
+    # Descargp y Ejecuto OSInt script
+    curl -sSL https://raw.githubusercontent.com/osintESP/instalacionAR01/master/osintesp-desatendido | bash
+    
   SHELL
 end
