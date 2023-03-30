@@ -5,27 +5,29 @@ Vagrant.configure("2") do |config|
     vb.memory = 4096
     vb.cpus = 2
     vb.gui = true
+    vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
+    vb.customize ["modifyvm", :id, "--vram", "128"]
   end
 
   config.vm.provision "shell", inline: <<-SHELL
     # Install GNOME, Xorg and VirtualBox Guest Additions
     sudo pacman -Syu --noconfirm xorg xorg-xclock xorg-xauth xorg-xbacklight xorg-xev xorg-xinput xorg-xkbcomp xorg-xkbevd xorg-xkbutils xorg-xmodmap xorg-xprop xorg-xrandr xorg-xrdb xorg-xrefresh xorg-xset xorg-xsetroot xorg-xvinfo xorg-xwayland xorg-server xorg-xinit virtualbox-guest-utils-nox gnome gnome-extra
 
-    # Check if GNOME is installed
+    # Chequeo si está instalado GNOME
     if ! pacman -Qs gnome-shell > /dev/null; then
       echo "GNOME not installed. Aborting..."
       exit 1
     fi
 
-    # Configure GDM to start on boot
+    # Configuro GDM para que inicie..
     sudo systemctl enable gdm.service
 
-    # Mount the Guest Additions ISO and run the installer
+    # Monto VBOXLinux
     sudo mkdir /media/cdrom
     sudo mount /dev/cdrom /media/cdrom
     sudo sh /media/cdrom/VBoxLinuxAdditions.run
 
-    # Restart VM
+    # Reinicio VM para que inicie entorno gráfico :)
     sudo reboot
     sleep 60
   SHELL
