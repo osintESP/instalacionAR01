@@ -32,6 +32,11 @@ sudo pacman -S --noconfirm armitage
 sudo pacman -S --noconfirm netcat
 sudo pacman -S --noconfirm whatweb
 sudo pacman -S --noconfirm firefox
+sudo pacman -S --noconfirm mimikatz
+sudo pacman -S --noconfirm beef
+sudo pacman -S --noconfirm powersploit
+sudo pacman -S --noconfirm empire
+sudo pacman -S --noconfirm theharvester
 
 yay -S --noconfirm cain
 
@@ -40,37 +45,6 @@ cd ~/Downloads/
 wget https://cobaltstrike.com/download?invitation=
 chmod +x cs
 sudo mv cs /usr/bin/
-
-# Instalación de Empire Project
-#cd ~/Downloads/
-#sudo pacman -S --noconfirm python-virtualenv fakeroot swig
-#https://aur.archlinux.org/powershell-empire.git
-#cd Empire
-
-
-# Instalación de PowerSploit
-cd ~/Downloads/
-git clone https://github.com/PowerShellMafia/PowerSploit.git
-sudo mv PowerSploit /opt
-
-# Instalación de BeEF
-cd ~/Downloads/
-git clone https://github.com/beefproject/beef.git
-cd beef 
-yes | sudo ./install
-
-# Instalación de Mimikatz 
-cd ~/Downloads/
-git clone https://github.com/gentilkiwi/mimikatz.git 
-cd mimikatz 
-make 
-
-# Clonar TheHarvester y sus dependencias 
-cd ~/Downloads/ 
-git clone https://github.com/laramies/theHarvester.git 
-cd theHarvester 
-yes | sudo pip install -r requirements/base.txt 
-yes | sudo python setup.py install 
 
 # Clonar Shodan y sus dependencias 
 cd ~/Downloads/ 
