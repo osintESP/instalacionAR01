@@ -12,25 +12,27 @@ curl -O https://blackarch.org/strap.sh
 echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
 chmod +x strap.sh
 sudo ./strap.sh
-sudo pacman -Syu --noconfirm
-sudo pacman -Syu yay --noconfirm
+sudo pacman -S --noconfirm
+sudo pacman -S yay --noconfirm
+sudo pacman -S fakeroot --noconfirm
 
 echo "Todas las herramientas han sido instaladas correctamente"
 
 # Actualizar e instalar herramientas de OSINT y explotación
-sudo pacman -Syu --noconfirm nmap 
-sudo pacman -Syu --noconfirm wireshark-qt
-sudo pacman -Syu --noconfirm metasploit
-sudo pacman -Syu --noconfirm aircrack-ng
-sudo pacman -Syu --noconfirm sqlmap
-sudo pacman -Syu --noconfirm nikto
-sudo pacman -Syu --noconfirm tor
-sudo pacman -Syu --noconfirm proxychains
-sudo pacman -Syu --noconfirm bleachbit
-sudo pacman -Syu --noconfirm hydra
-sudo pacman -Syu --noconfirm armitage
-sudo pacman -Syu --noconfirm netcat
-sudo pacman -Syu --noconfirm whatweb
+sudo pacman -S --noconfirm nmap 
+sudo pacman -S --noconfirm wireshark-qt
+sudo pacman -S --noconfirm metasploit
+sudo pacman -S --noconfirm aircrack-ng
+sudo pacman -S --noconfirm sqlmap
+sudo pacman -S --noconfirm nikto
+sudo pacman -S --noconfirm tor
+sudo pacman -S --noconfirm proxychains
+sudo pacman -S --noconfirm bleachbit
+sudo pacman -S --noconfirm hydra
+sudo pacman -S --noconfirm armitage
+sudo pacman -S --noconfirm netcat
+sudo pacman -S --noconfirm whatweb
+sudo pacman -S --noconfirm firefox
 
 yay -S --noconfirm cain
 
@@ -41,10 +43,11 @@ chmod +x cs
 sudo mv cs /usr/bin/
 
 # Instalación de Empire Project
-cd ~/Descargas/
-git clone https://github.com/BC-SECURITY/Empire.git
-cd Empire
-yes | sudo ./setup/install.sh
+#cd ~/Descargas/
+#sudo pacman -S --noconfirm python-virtualenv fakeroot swig
+#https://aur.archlinux.org/powershell-empire.git
+#cd Empire
+
 
 # Instalación de PowerSploit
 cd ~/Descargas/
