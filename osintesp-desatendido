@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Instalar Pre-Requisitos Python y dpkg
@@ -37,47 +36,47 @@ sudo pacman -S --noconfirm firefox
 yay -S --noconfirm cain
 
 # Instalación de Cobalt Strike
-cd ~/Descargas/
+cd ~/Downloads/
 wget https://cobaltstrike.com/download?invitation=
 chmod +x cs
 sudo mv cs /usr/bin/
 
 # Instalación de Empire Project
-#cd ~/Descargas/
+#cd ~/Downloads/
 #sudo pacman -S --noconfirm python-virtualenv fakeroot swig
 #https://aur.archlinux.org/powershell-empire.git
 #cd Empire
 
 
 # Instalación de PowerSploit
-cd ~/Descargas/
+cd ~/Downloads/
 git clone https://github.com/PowerShellMafia/PowerSploit.git
 sudo mv PowerSploit /opt
 
 # Instalación de BeEF
-cd ~/Descargas/
+cd ~/Downloads/
 git clone https://github.com/beefproject/beef.git
 cd beef 
 yes | sudo ./install
 
 # Instalación de Mimikatz 
-cd ~/Descargas/
+cd ~/Downloads/
 git clone https://github.com/gentilkiwi/mimikatz.git 
 cd mimikatz 
 make 
 
 # Clonar TheHarvester y sus dependencias 
-cd ~/Descargas/ 
+cd ~/Downloads/ 
 git clone https://github.com/laramies/theHarvester.git 
 cd theHarvester 
 yes | sudo pip install -r requirements/base.txt 
 yes | sudo python setup.py install 
 
 # Clonar Shodan y sus dependencias 
-cd ~/Descargas/ 
+cd ~/Downloads/ 
 git clone https://github.com/achillean/shodan-python.git 
 cd shodan-python yes | sudo python setup.py install 
 
-# Instalación de Shellter cd ~/Descargas/ wget -q 'https://www.shellterproject.com/Downloads/Shellter/Latest/shellter.zip' unzip shellter.zip rm shellter.zip 
+# Instalación de Shellter cd ~/Downloads/ wget -q 'https://www.shellterproject.com/Downloads/Shellter/Latest/shellter.zip' unzip shellter.zip rm shellter.zip 
 
 # Instalar SpiderFoot cd ~/Downloads/ git clone https://github.com/smicallef/spiderfoot.git cd spiderfoot yes | sudo pip install -r requirements.txt yes | sudo pip install M2Crypto cherrypy mako requests bs4 lxml netaddr pysocks ipwhois phonenumbers pyOpenSSL ssdeep pytz stem PyPDF2 olefile openxmllib tldextract cryptography pyopenssl ndg_httpsclient pyasn1 google-api-python-client oauth2client google-auth google-auth-oauthlib google-auth-httplib2 XlsxWriter xlrd xlwt future python-docx dnslib exifread Flask flask_cors flask_login flask_sqlalchemy itsdangerous Jinja2 MarkupSafe SQLAlchemy Werkzeug click dominate visitor Flask-WTF WTForms email_validator idna certifi urllib3 chardet pycparser cffi pycparser six packaging pyparsing zipp importlib-metadata typing-extensions keyring jeepney SecretStorage dbus-python entrypoints keyrings.alt
