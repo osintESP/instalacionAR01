@@ -77,6 +77,12 @@ cd ~/Downloads/
 git clone https://github.com/achillean/shodan-python.git 
 cd shodan-python yes | sudo python setup.py install 
 
-# Instalación de Shellter cd ~/Downloads/ wget -q 'https://www.shellterproject.com/Downloads/Shellter/Latest/shellter.zip' unzip shellter.zip rm shellter.zip 
+# Instalación de Shellter
+cd ~/Downloads/
+wget -q 'https://www.shellterproject.com/Downloads/Shellter/Latest/shellter.zip'
+unzip shellter.zip rm shellter.zip 
 
-# Instalar SpiderFoot cd ~/Downloads/ git clone https://github.com/smicallef/spiderfoot.git cd spiderfoot yes | sudo pip install -r requirements.txt yes | sudo pip install M2Crypto cherrypy mako requests bs4 lxml netaddr pysocks ipwhois phonenumbers pyOpenSSL ssdeep pytz stem PyPDF2 olefile openxmllib tldextract cryptography pyopenssl ndg_httpsclient pyasn1 google-api-python-client oauth2client google-auth google-auth-oauthlib google-auth-httplib2 XlsxWriter xlrd xlwt future python-docx dnslib exifread Flask flask_cors flask_login flask_sqlalchemy itsdangerous Jinja2 MarkupSafe SQLAlchemy Werkzeug click dominate visitor Flask-WTF WTForms email_validator idna certifi urllib3 chardet pycparser cffi pycparser six packaging pyparsing zipp importlib-metadata typing-extensions keyring jeepney SecretStorage dbus-python entrypoints keyrings.alt
+# Instalar SpiderFoot 
+cd ~/Downloads/ 
+git clone https://github.com/smicallef/spiderfoot.git 
+cd spiderfoot yes | sudo pip install -r requirements.txt yes | sudo pip install M2Crypto cherrypy mako requests bs4 lxml netaddr pysocks ipwhois phonenumbers pyOpenSSL ssdeep pytz stem PyPDF2 olefile openxmllib tldextract cryptography pyopenssl ndg_httpsclient pyasn1 google-api-python-client oauth2client google-auth google-auth-oauthlib google-auth-httplib2 XlsxWriter xlrd xlwt future python-docx dnslib exifread Flask flask_cors flask_login flask_sqlalchemy itsdangerous Jinja2 MarkupSafe SQLAlchemy Werkzeug click dominate visitor Flask-WTF WTForms email_validator idna certifi urllib3 chardet pycparser cffi pycparser six packaging pyparsing zipp importlib-metadata typing-extensions keyring jeepney SecretStorage dbus-python entrypoints keyrings.alt
