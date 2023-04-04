@@ -16,10 +16,10 @@ chmod +x cs
 sudo mv cs /usr/bin/
 
 # Clonar Shodan y sus dependencias 
-cd ~/Downloads/ 
-git clone https://github.com/achillean/shodan-python.git 
-cd shodan-python 
-sudo python setup.py install 
+#cd ~/Downloads/ 
+#git clone https://github.com/achillean/shodan-python.git 
+#cd shodan-python 
+#sudo python setup.py install 
 
 # Instalación de Shellter
 cd ~/Downloads/
