@@ -44,6 +44,11 @@ sudo pacman -S --noconfirm datasploit
 sudo pacman -S --noconfirm infoga
 sudo pacman -S --noconfirm protosint
 
+# Nessus
+cd ~/Downloads/
+git clone https://aur.archlinux.org/nessus.git
+cd nessus
+makepkg -si
 
 # Shodan API
 cd ~/Downloads/
