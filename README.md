@@ -60,6 +60,9 @@ chmod +x osintesp-desatendido
 ./osintesp-desatendido
 ```
 
+# Información importante : 
+## El usuario y contraseña de la distro por defecto.
+
 ```
 Usuario: vagrant
 ```
