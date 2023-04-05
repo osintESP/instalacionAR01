@@ -23,11 +23,12 @@ https://www.virtualbox.org/wiki/Downloads
 Ej: Path : /home/user/vm/osintesp
 
 ```
-```
 cd /home/user/vm/osintesp
+```
+```
 vim Vagrantfile
 ```
-```
+
 Copiar y pegar el contenido de https://github.com/osintESP/instalacionAR01/blob/master/vagrantfile donde encontrarás la última versión del archivo responsable de la auto-instalación de la distro.
 
 
