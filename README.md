@@ -5,7 +5,7 @@
 
 ## Opción A 
 
-##VAGRANT
+VAGRANT
 
 La manera más fácil de tener tu distribución disponible en tu equipo!
 Pre-Requisitos:
