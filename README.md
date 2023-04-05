@@ -60,8 +60,10 @@ chmod +x osintesp-desatendido
 ./osintesp-desatendido
 ```
 
-
+```
 Usuario: vagrant
+```
+```
 Contraseña: vagrant
-
+```
 
