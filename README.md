@@ -21,10 +21,14 @@ https://www.virtualbox.org/wiki/Downloads
 3) Crear los siguientes archivos:
 
 Ej: Path : /home/user/vm/osintesp
+
+```
+```
 cd /home/user/vm/osintesp
 vim Vagrantfile
-
-
+```
+```
+Copiar y pegar el contenido de https://github.com/osintESP/instalacionAR01/blob/master/vagrantfile donde encontrarás la última versión del archivo responsable de la auto-instalación de la distro.
 
 
 # Posibles ERRORES
@@ -36,7 +40,7 @@ Verifica si tienes Kaspersky deberás por un momento desactivar la verificación
 
 
 
-Instalación de herramientas básicas de OSINT
+# Instalación de herramientas Osint modo Manual
 
 ## Deploy instalación desatendida
 
