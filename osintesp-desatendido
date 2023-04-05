@@ -30,12 +30,15 @@ sudo pacman -S --noconfirm beef
 sudo pacman -S --noconfirm powersploit
 sudo pacman -S --noconfirm empire
 sudo pacman -S --noconfirm theharvester
-sudo pacman -Syu --noconfirm shellter
-sudo pacman -Syu spiderfoot
-sudo pacman -S maltego
-sudo pacman -S Reconnoitre
-sudo pacman -S sublist3r
-sudo pacman -S EyeWitnes
+sudo pacman -S --noconfirm shellter
+sudo pacman -S --noconfirm spiderfoot
+sudo pacman -S --noconfirm maltego
+sudo pacman -S --noconfirm Reconnoitre
+sudo pacman -S --noconfirm sublist3r
+sudo pacman -S --noconfirm EyeWitnes
+sudo pacman -S --noconfirm burpsuite
+sudo pacman -S --noconfirm metagoofil
+sudo pacman -S --noconfirm spiderfoot
 
 
 
