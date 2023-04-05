@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Papel Tapiz de OSINTesp
+gsettings set org.gnome.desktop.background picture-uri "/home/vagrant/instalacionAR01/OIG.jpg"
+
 # Instalar Pre-Requisitos Python y dpkg
 sudo pacman -S --noconfirm python python-pip python-setuptools dpkg ruby yay fakeroot wget
 
