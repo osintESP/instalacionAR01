@@ -3,9 +3,9 @@
 
 ## Brindamos alternativas para que lleves a cabo la instalación
 
-## Opción 0 
+## Opción A 
 
-##Vagrant
+##VAGRANT
 
 La manera más fácil de tener tu distribución disponible en tu equipo!
 Pre-Requisitos:
@@ -18,7 +18,11 @@ https://developer.hashicorp.com/vagrant/downloads
 
 https://www.virtualbox.org/wiki/Downloads
 
-Crear los siguientes archivos:
+3) Crear los siguientes archivos:
+
+Ej: Path : /home/user/vm/osintesp
+cd /home/user/vm/osintesp
+vim Vagrantfile
 
 
 
