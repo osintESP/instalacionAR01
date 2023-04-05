@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
     sudo sed -i 's/#es_ES.UTF-8 UTF-8/es_ES.UTF-8 UTF-8/g' /etc/locale.gen
     sudo locale-gen
     sudo sed -i 's/^KEYMAP=.*/KEYMAP=es/g' /etc/vconsole.conf
-    sudo pacman -Syu --noconfirm xorg xorg-xclock xorg-xauth xorg-xbacklight xorg-xev xorg-xinput xorg-xkbcomp xorg-xkbevd xorg-xkbutils xorg-xmodmap xorg-xprop xorg-xrandr xorg-xrdb xorg-xrefresh xorg-xset xorg-xsetroot xorg-xvinfo xorg-xwayland xorg-server xorg-xinit xorg-setxkbmap virtualbox-guest-utils-nox gnome gnome-extra nano terminator 
+    sudo pacman -Syu --noconfirm xorg xorg-xclock xorg-xauth xorg-xbacklight xorg-xev xorg-xinput xorg-xkbcomp xorg-xkbevd xorg-xkbutils xorg-xmodmap xorg-xprop xorg-xrandr xorg-xrdb xorg-xrefresh xorg-xset xorg-xsetroot xorg-xvinfo xorg-xwayland xorg-server xorg-xinit virtualbox-guest-utils-nox gnome gnome-extra nano terminator 
     
     # Verificar si GNOME está instalado
     if ! pacman -Qs gnome-shell > /dev/null; then
@@ -28,15 +28,18 @@ Vagrant.configure("2") do |config|
     # Configurar GDM para que inicie
     sudo systemctl enable gdm.service
 
+    # Actualizar el archivo /etc/pacman.conf para habilitar [multilib]
+   #sudo sed -i 's/^#\[multilib\]/\[multilib\]/' /etc/pacman.conf
+   #sudo sed -i 's/^#Include/Include/' /etc/pacman.conf
+    sudo sed -i '/^\[multilib\]/{s/#//}' /etc/pacman.conf
+    sudo sed -i '/^Include = \/etc\/pacman.d\/mirrorlist/{s/#//}' /etc/pacman.conf
+    sudo pacman -Syu --noconfirm
+
     # Clonar y ejecutar script de OSInt
     git clone https://github.com/osintESP/instalacionAR01
     cd instalacionAR01/
     chmod +x osintesp-desatendido
     ./osintesp-desatendido
-
-    # Actualizar el archivo /etc/pacman.conf para habilitar [multilib] asi puedo instalar Wine :)
-    sudo sed -i 's/^#\[multilib\]/\[multilib\]/' /etc/pacman.conf
-    sudo sed -i 's/^#Include/Include/' /etc/pacman.conf
 
     sudo systemctl reboot
   # Montar VBoxGuestAdditions
@@ -45,4 +48,3 @@ Vagrant.configure("2") do |config|
     sudo sh /media/cdrom/VBoxLinuxAdditions.run 
   SHELL
 end
-
