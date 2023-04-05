@@ -32,6 +32,14 @@ sudo pacman -S --noconfirm empire
 sudo pacman -S --noconfirm theharvester
 sudo pacman -Syu --noconfirm shellter
 sudo pacman -Syu spiderfoot
+sudo pacman -S maltego
+sudo pacman -S Reconnoitre
+sudo pacman -S sublist3r
+sudo pacman -S EyeWitnes
+
+
+
+
 
 # Shodan API
 cd ~/Downloads/
