@@ -39,9 +39,10 @@ sudo pacman -S --noconfirm EyeWitnes
 sudo pacman -S --noconfirm burpsuite
 sudo pacman -S --noconfirm metagoofil
 sudo pacman -S --noconfirm spiderfoot
-
-
-
+sudo pacman -S --noconfirm skiptracer
+sudo pacman -S --noconfirm datasploit
+sudo pacman -S --noconfirm infoga
+sudo pacman -S --noconfirm protosint
 
 
 # Shodan API
