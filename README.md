@@ -28,6 +28,23 @@ cd /home/user/vm/osintesp
 ```
 vim Vagrantfile
 ```
+```
+vagrant up
+```
+El proceso demorará dependendiendo de dos factores :
+
+1 - Enlace de Internet
+2 - Hardware del anfitrión
+
+Cuando termine de instalarse de manera desatendida la distribución debe realizar las siguientes acciones:
+
+1 - Configurar Idioma
+
+
+Video
+
+
+
 
 Copiar y pegar el contenido de https://github.com/osintESP/instalacionAR01/blob/master/vagrantfile donde encontrarás la última versión del archivo responsable de la auto-instalación de la distro.
 
