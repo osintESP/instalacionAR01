@@ -78,3 +78,14 @@ chmod +x osintesp-desatendido
 ```
 ./osintesp-desatendido
 ```
+
+Características de la distribución
+
+Imagen de ARCHlinux (Sitio de descarga oficial)
+658MB
+
+Imagen con Interfaz Gráfica
+2GB
+
+Imagen con herramientas instaladas
+8.9GB
