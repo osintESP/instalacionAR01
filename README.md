@@ -42,7 +42,7 @@ Cuando termine de instalarse de manera desatendida la distribución debe realiza
 1 - Configurar Idioma
 
 
-Video
+https://youtu.be/FWt030mdUmo
 
 
 Copiar y pegar el contenido de https://github.com/osintESP/instalacionAR01/blob/master/vagrantfile donde encontrarás la última versión del archivo responsable de la auto-instalación de la distro.
