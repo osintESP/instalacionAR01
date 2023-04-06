@@ -45,17 +45,18 @@ Cuando termine de instalarse de manera desatendida la distribución debe realiza
 Video
 
 
-
-
 Copiar y pegar el contenido de https://github.com/osintESP/instalacionAR01/blob/master/vagrantfile donde encontrarás la última versión del archivo responsable de la auto-instalación de la distro.
 
 
-# Posibles ERRORES
+# Información importante: 
+## El usuario y contraseña de la distro por defecto.
 
-URL: ["https://vagrantcloud.com/osintesp/osintesp-v1"]
-Error: schannel: next InitializeSecurityContext failed: Unknown error (0x80092012) - La funci¾n de revocaci¾n no puede comprobar la revocaci¾n para el certificado.
-
-Verifica si tienes Kaspersky deberás por un momento desactivar la verificación de https.
+```
+Usuario: vagrant
+```
+```
+Contraseña: vagrant
+```
 
 
 
@@ -77,14 +78,3 @@ chmod +x osintesp-desatendido
 ```
 ./osintesp-desatendido
 ```
-
-# Información importante: 
-## El usuario y contraseña de la distro por defecto.
-
-```
-Usuario: vagrant
-```
-```
-Contraseña: vagrant
-```
-
