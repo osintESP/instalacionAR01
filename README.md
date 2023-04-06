@@ -34,6 +34,7 @@ vagrant up
 El proceso demorará dependendiendo de dos factores :
 
 1 - Enlace de Internet
+
 2 - Hardware del anfitrión
 
 Cuando termine de instalarse de manera desatendida la distribución debe realizar las siguientes acciones:
