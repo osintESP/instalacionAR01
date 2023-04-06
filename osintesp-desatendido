@@ -46,6 +46,17 @@ sudo pacman -S --noconfirm skiptracer
 sudo pacman -S --noconfirm datasploit
 sudo pacman -S --noconfirm infoga
 sudo pacman -S --noconfirm protosint
+sudo pacman -S --noconfirm snort
+sudo pacman -S --noconfirm hascat
+sudo pacman -S --noconfirm responder
+sudo pacman -S --noconfirm wce
+sudo pacman -S --noconfirm lazagne
+sudo pacman -S --noconfirm firejail
+sudo pacman -S --noconfirm onionscan
+sudo pacman -S --noconfirm bloudhound
+sudo pacman -S --noconfirm bloudhound
+sudo pacman -S --noconfirm bloudhound
+
 
 # Nessus
 cd ~/Downloads/
